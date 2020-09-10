@@ -14,7 +14,7 @@ export class RangeComponent {
   }>();
   constructor() {}
 
-  range(e) {
+  range(e: any) {
     this.value = e.target.value;
     this.change.emit({ value: this.value, key: this.key });
   }

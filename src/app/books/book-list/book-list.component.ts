@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IBook } from '../ibook';
 
 @Component({
   selector: 'app-book-list',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class BookListComponent implements OnInit {
-  books = [
+  books: IBook[] = [
     {
       title: 'Design Patterns',
       isbn: 1,
