@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { R3TargetBinder } from '@angular/compiler';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-mouse-position',
@@ -7,11 +6,12 @@ import { R3TargetBinder } from '@angular/compiler';
   styles: [],
 })
 export class MousePositionComponent implements OnInit {
-  x: number = 0;
+  @Input() x: number = 0;
   y: number = 0;
-  r: number = 50;
-  g: number = 50;
-  b: number = 50;
+  r: number = 0;
+  g: number = 0;
+  b: number = -10;
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -22,7 +22,7 @@ export class MousePositionComponent implements OnInit {
     this.x = e.x;
     this.y = e.y;
   }
-  range(e, c) {
+  range(e, c: 'r' | 'b' | 'g') {
     console.log(e.target.value);
     if (c === 'r') {
       this.r = e.target.value;
