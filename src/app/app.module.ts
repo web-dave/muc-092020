@@ -8,13 +8,15 @@ import { AboutModule } from './about/about.module';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { InfoBoxComponent } from './info-box/info-box.component';
 import { MousePositionComponent } from './mouse-position/mouse-position.component';
+import { TitleBoxComponent } from './title-box/title-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopNavComponent,
     InfoBoxComponent,
-    MousePositionComponent
+    MousePositionComponent,
+    TitleBoxComponent
   ],
   imports: [
     BrowserModule,
