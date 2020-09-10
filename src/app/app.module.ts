@@ -9,6 +9,7 @@ import { TopNavComponent } from './top-nav/top-nav.component';
 import { InfoBoxComponent } from './info-box/info-box.component';
 import { MousePositionComponent } from './mouse-position/mouse-position.component';
 import { TitleBoxComponent } from './title-box/title-box.component';
+import { RangeComponent } from './range/range.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TitleBoxComponent } from './title-box/title-box.component';
     TopNavComponent,
     InfoBoxComponent,
     MousePositionComponent,
-    TitleBoxComponent
+    TitleBoxComponent,
+    RangeComponent
   ],
   imports: [
     BrowserModule,

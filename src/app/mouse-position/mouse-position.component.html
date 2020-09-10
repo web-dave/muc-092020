@@ -8,29 +8,8 @@
   y: {{ y }}
 </div>
 <div>
-  <input
-    [value]="r"
-    (input)="range($event, 'r')"
-    type="range"
-    min="0"
-    max="255"
-    step="1"
-  />
-  <input
-    [value]="g"
-    (input)="range($event, 'g')"
-    type="range"
-    min="0"
-    max="255"
-    step="1"
-  />
-  <input
-    [value]="b"
-    (input)="range($event, 'b')"
-    type="range"
-    min="0"
-    max="255"
-    step="1"
-  />
+  <app-range [value]="r" key="r" (change)="range($event)"></app-range>
+  <app-range [value]="g" key="g" (change)="range($event)"></app-range>
+  <app-range [value]="b" key="b" (change)="range($event)"></app-range>
+  <div>{{ getColor() }}</div>
 </div>
-<div>{{ getColor() }}</div>

@@ -22,15 +22,9 @@ export class MousePositionComponent implements OnInit {
     this.x = e.x;
     this.y = e.y;
   }
-  range(e, c: 'r' | 'b' | 'g') {
-    console.log(e.target.value);
-    if (c === 'r') {
-      this.r = e.target.value;
-    } else if (c === 'g') {
-      this.g = e.target.value;
-    } else {
-      this.b = e.target.value;
-    }
+  range(e: { value: number; key: 'r' | 'g' | 'b' }) {
+    console.log(e);
+    this[e.key] = e.value;
   }
 
   getColor() {

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'muc092020';
+  hurz(e: string) {
+    console.log(e);
+    this.title = e;
+  }
 }

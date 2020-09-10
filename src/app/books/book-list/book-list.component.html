@@ -1,0 +1,17 @@
+<h3>Book List</h3>
+<table>
+  <tr
+    *ngFor="
+      let book of books;
+      let i = index;
+      let f = first;
+      let l = last;
+      let e = even;
+      let o = odd
+    "
+  >
+    <td>{{ i }} - {{ book.title }}</td>
+    <td>{{ book.isbn }}</td>
+    <td>{{ f }},{{ l }}, {{ e }}, {{ o }}</td>
+  </tr>
+</table>
