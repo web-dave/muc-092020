@@ -1,7 +1,14 @@
 <p>mouse-position works!</p>
 <div
+  [style.backgroundColor]="getColor()"
   (mousemove)="mouseMoved($event)"
-  style="height: 400px; width: 400px; border: 1px solid"
-></div>
-x: {{ x }} <br />
-y: {{ y }}
+  style="height: 200px; width: 200px; border: 1px solid"
+>
+  x: {{ x }} <br />
+  y: {{ y }}
+</div>
+<div>
+  <input (input)="range($event, 'r')" type="range" min="0" max="255" step="1" />
+  <input (input)="range($event, 'g')" type="range" min="0" max="255" step="1" />
+  <input (input)="range($event, 'b')" type="range" min="0" max="255" step="1" />
+</div>
