@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { IBook } from './ibook';
 import { Observable, of, from } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { shareReplay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -58,6 +59,9 @@ export class BookService {
   getBooks(): Observable<IBook[]> {
     // return of(this.books);
     return this.http.get<IBook[]>(this.url);
+  }
+  getBook(isbn: string): Observable<IBook> {
+    return this.http.get<IBook>(this.url + isbn).pipe(shareReplay(1));
   }
   getBooks2(): Observable<IBook> {
     return from(this.books);

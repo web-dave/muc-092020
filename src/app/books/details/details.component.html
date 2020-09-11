@@ -1,0 +1,10 @@
+<h3>Book Details</h3>
+<pre>{{ book$ | async | json }}</pre>
+<hr />
+<pre>{{ book1$ | async | json }}</pre>
+<!-- <table *ngIf="book$">
+  <tr *ngFor="let nb of getKeys(book$ | async)">
+    <td>{{ nb }}</td>
+    <td>{{ (book$ | async)[nb] }}</td>
+  </tr>
+</table> -->
