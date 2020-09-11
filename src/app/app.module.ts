@@ -10,7 +10,7 @@ import { InfoBoxComponent } from './info-box/info-box.component';
 import { MousePositionComponent } from './mouse-position/mouse-position.component';
 import { TitleBoxComponent } from './title-box/title-box.component';
 import { RangeComponent } from './range/range.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,15 +18,16 @@ import { RangeComponent } from './range/range.component';
     InfoBoxComponent,
     MousePositionComponent,
     TitleBoxComponent,
-    RangeComponent
+    RangeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BooksModule,
-    AboutModule
+    AboutModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

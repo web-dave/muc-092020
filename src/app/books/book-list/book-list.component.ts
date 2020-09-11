@@ -10,6 +10,7 @@ import { map, filter, tap } from 'rxjs/operators';
   styles: [],
 })
 export class BookListComponent implements OnInit, OnDestroy {
+  i = 0;
   book$: Observable<IBook[]>;
   bar: Observable<IBook>;
   foo: Observable<string>;
@@ -18,19 +19,27 @@ export class BookListComponent implements OnInit, OnDestroy {
   b = interval(500).pipe(map(() => 'baffe'));
   c = interval(700).pipe(map(() => 'caffe'));
   d = interval(2500).pipe(map(() => 'daffe'));
-  constructor(private service: BookService) {}
+  constructor(private service: BookService) {
+    setInterval(() => {
+      this.i++;
+    }, 1500);
+  }
 
   ngOnInit(): void {
-    this.book$ = this.service
-      .getBooks()
-      .pipe(map((x) => x.filter((b) => b.isbn === 2)));
+    this.book$ = this.service.getBooks();
+    // .pipe(map((x) => x.filter((b) => b.isbn === 2)));
     this.foo = merge<string>(this.a, this.b, this.c, this.d);
     this.bar = this.service.getBooks2().pipe(
       tap((data) => console.log(data)),
-      filter((b) => b.isbn === 1)
+      filter((b) => b.isbn === '1')
     );
 
     this.baz = this.service.getBooks2().subscribe();
+  }
+
+  getI(value: number) {
+    console.log('GET I');
+    return value;
   }
 
   ngOnDestroy() {
