@@ -19,10 +19,17 @@ export class BookListComponent implements OnInit, OnDestroy {
   b = interval(500).pipe(map(() => 'baffe'));
   c = interval(700).pipe(map(() => 'caffe'));
   d = interval(2500).pipe(map(() => 'daffe'));
+
   constructor(private service: BookService) {
     setInterval(() => {
       this.i++;
     }, 1500);
+  }
+
+  get books() {
+    console.log('GETTA');
+
+    return this.i;
   }
 
   ngOnInit(): void {
