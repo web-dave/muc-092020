@@ -1,5 +1,5 @@
 <app-top-nav></app-top-nav>
-<app-title-box [ping]="title" (pong)="hurz($event)"></app-title-box>
+<app-title-box [ping]="title | uppercase" (pong)="hurz($event)"></app-title-box>
 <app-book></app-book>
 <app-info-box></app-info-box>
 <app-mouse-position></app-mouse-position>

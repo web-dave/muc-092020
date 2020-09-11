@@ -2,7 +2,7 @@
 <table>
   <tr
     *ngFor="
-      let book of books;
+      let book of book$ | async;
       let i = index;
       let f = first;
       let l = last;
@@ -15,3 +15,6 @@
     <td>{{ f }},{{ l }}, {{ e }}, {{ o }}</td>
   </tr>
 </table>
+{{ bar | async | json }}
+<hr />
+{{ foo | async }}
